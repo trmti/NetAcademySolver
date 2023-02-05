@@ -155,11 +155,10 @@ async function solveInput() {
 
 async function solvePart1(words) {
   await click('#nan-contents-cover-buttons > div:nth-of-type(1) button');
-  await click('.ui-dialog-buttonpane button:last-of-type');
   await new Promise((resolve) => setTimeout(() => resolve(), 200));
-  await driver.wait(until.elementLocated(By.css('#nan-choice-0 > span')));
 
   const id = await new AutoCloseModal().setAuto();
+  await driver.wait(until.elementLocated(By.css('#nan-choice-0 > span')));
 
   async function execute(words) {
     let count = 0;
@@ -229,7 +228,7 @@ async function solvePart1(words) {
     .then((data) => {
       return data;
     });
-  await new Promise((resolve) => setTimeout(() => resolve(), 1000));
+  await new Promise((resolve) => setTimeout(() => resolve(), 2000));
   await click('#nan-toolbox-footer .nan-button-action');
   await driver.wait(async () => {
     const res = await driver
