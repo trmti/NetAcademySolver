@@ -116,10 +116,9 @@ async function solveInput() {
     let jp;
     let finished = false;
     const observer = new MutationObserver((mutations, obs) => {
-      console.log('obs');
       const rec = mutations[0];
       const newWord = rec.removedNodes[0].textContent;
-      if (newWord.search(/\w/) != -1) {
+      if (newWord.search(/[A-Za-z]/) != -1) {
         if (words[newWord] == undefined) {
           en = newWord;
         } else {
@@ -129,6 +128,8 @@ async function solveInput() {
       } else if (en != undefined) {
         jp = newWord;
         words[en] = jp;
+        console.log('en: ', en, 'jp: ', jp);
+        en = jp = undefined;
       } else {
         jp = newWord;
       }
@@ -171,6 +172,7 @@ async function solvePart1(words) {
       const btn2 = document.querySelector('#nan-choice-1');
 
       let num;
+      console.log(words);
       Object.keys(words).forEach((key) => {
         if (text1 == key || text1 == words[key]) {
           num = 1;
