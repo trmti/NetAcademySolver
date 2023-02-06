@@ -7,7 +7,7 @@
 
 2. node.js をインストール
 
-   ここを参照。https://miya-system-works.com/blog/detail/179
+   ここを参照(2 番までで大丈夫)。https://miya-system-works.com/blog/detail/179
 
 3. Github からプログラムを持ってくる
 
